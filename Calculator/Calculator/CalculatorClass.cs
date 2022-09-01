@@ -2,6 +2,8 @@
 {
     public class CalculatorClass
     {
+    
+        public double Accumulator { get; private set; }
 
         public double Add(double a, double b)
         {
@@ -19,6 +21,11 @@
         public double Power(double x, double exp)
         {
             return Math.Pow(x, exp);
+        }
+
+        public double Devide(double a, double b)
+        {
+            return a / b;
         }
     }
 }

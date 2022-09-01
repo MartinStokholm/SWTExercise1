@@ -47,16 +47,16 @@ namespace Calculator.Test.Unit
         }
 
         [TestCase(0, 0, ExpectedResult = 0)]
-        //[TestCase(0, 5)]
-        //[TestCase(5, 0)]
-        //[TestCase(2, 5)]
-        //[TestCase(3, -1)]
-        //[TestCase(-4, 5)]
-        //[TestCase(-3, -2)]
-        //[TestCase(2.4, 5.2)]
-        //[TestCase(3.3, -1.2)]
-        //[TestCase(-4.2, 5.6)]
-        //[TestCase(-3.1, -2.9)]
+        [TestCase(0, 5)]
+        [TestCase(5, 0)]
+        [TestCase(2, 5)]
+        [TestCase(3, -1)]
+        [TestCase(-4, 5)]
+        [TestCase(-3, -2)]
+        [TestCase(2.4, 5.2)]
+        [TestCase(3.3, -1.2)]
+        [TestCase(-4.2, 5.6)]
+        [TestCase(-3.1, -2.9)]
         public double MultiplyTwoNumberTogether(double param1, double param2)
         {
             return uut.Multiply(param1, param2);

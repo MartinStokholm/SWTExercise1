@@ -5,27 +5,33 @@
     
         public double Accumulator { get; private set; }
 
-        public double Add(double a, double b)
+        public void Clear()
         {
-            return a + b;
+            Accumulator = 0;
+        }
+        public double Add(double addend)
+        {
+            return Accumulator += addend;
         }
 
-        public double Subtract(double a, double b)
-        { return a - b; }
-
-        public double Multiply(double a, double b)
+        public double Subtract(double subtractor)
         {
-            return b * a;
+            return Accumulator -= subtractor;
         }
 
-        public double Power(double x, double exp)
+        public double Multiply(double multiplier)
         {
-            return Math.Pow(x, exp);
+            return Accumulator *= multiplier;
         }
 
-        public double Devide(double a, double b)
+        public double Power(double exp)
         {
-            return a / b;
+            return Accumulator = Math.Pow(Accumulator, exp);
+        }
+
+        public double Divide( double divisor)
+        {
+            return Accumulator /= divisor;
         }
     }
 }

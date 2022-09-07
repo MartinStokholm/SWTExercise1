@@ -11,7 +11,7 @@
         }
         public double Add(double addend)
         {
-            return Accumulator += addend;
+            return Accumulator += addend; 
         }
 
         public double Subtract(double subtractor)

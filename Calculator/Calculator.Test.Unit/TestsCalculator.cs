@@ -90,7 +90,7 @@ namespace Calculator.Test.Unit
         [TestCase(9.5, 3, ExpectedResult = 28.5)]
         [TestCase(5.5, 0, ExpectedResult = 0)]
         [DefaultFloatingPointTolerance(0.05)]
-        public double MultiplyTwoNumberTogether(double param1, double param2) {
+        public double AddNumberAndMultiplyNumber(double param1, double param2) {
             uut.Add(param1);
             return uut.Multiply(param2);
         }
@@ -98,8 +98,12 @@ namespace Calculator.Test.Unit
         [TestCase(2, 2, ExpectedResult = 4)]
         [TestCase(9.5, 3.6, ExpectedResult = 3309.8245965342797812403250546094)]
         [TestCase(5.5, -4, ExpectedResult = 0.00109282152858411310702820845571)]
+        [TestCase(5.5, 0, ExpectedResult = 1)]
+        [TestCase(0, 5.5, ExpectedResult = 0)]
+        [TestCase(-5.5, 0, ExpectedResult = 1)]
+        [TestCase(0, -5.5, ExpectedResult = Double.PositiveInfinity)]
         [DefaultFloatingPointTolerance(0.05)]
-        public double PowerOfTwoNumberTogether(double param1, double param2)
+        public double AddNumberAndPowerOfNumber(double param1, double param2)
         {
             uut.Add(param1);
             return uut.Power(param2);
@@ -110,29 +114,19 @@ namespace Calculator.Test.Unit
         [TestCase(9.5, 3, ExpectedResult = 3.166666666666667)]
         [TestCase(5.5, 5, ExpectedResult = 1.1)]
         [DefaultFloatingPointTolerance(0.05)]
-        public double DivideOfTwoNumbers(double param1, double param2) {
+        public double AddNumberAndDivideNumber(double param1, double param2) {
             uut.Add(param1);
             return uut.Divide(param2);
         }
 
 
-        [TestCase(5, ExpectedResult = 10)]
-        [TestCase(-4.5, ExpectedResult = -9)]
+        [TestCase(5, 3, ExpectedResult = 1.66)]
+        [TestCase(-4.5, -5, ExpectedResult = 0.9)]
+        [TestCase(-4.5, 0, ExpectedResult = 0)]
         [DefaultFloatingPointTolerance(0.05)]
-        public double CainAddTwoNumbersTogether(double param) {
-            uut.Add(param);
-            return uut.Add(param);
+        public double DivideTwoNumbers(double param, double param2) {
+            return uut.Divide(param, param2);
         }
-
-
-
-        
-
-        //public void DivideWithZero(double param, double param2)
-        //{
-        //    double TestNumber = uut.Divide(param, param2);
-        //    Assert.That(TestNumber, Is.EqualTo(Math.DivRem(param, param2)));
-        //}
 
 
 

@@ -124,22 +124,21 @@ namespace Calculator.Test.Unit
         [TestCase(-4.5, -5, ExpectedResult = 0.9)]
         [TestCase(-4.5, 0, ExpectedResult = 0)]
         [DefaultFloatingPointTolerance(0.05)]
-        public double DivideTwoNumbers(double param, double param2) 
-        {
-            return uut.Divide(param, param2);
+        public double DivideTwoNumbers(double param1, double param2) {
+            return uut.Divide(param1, param2);
         }
 
         [Test]
-        public void DivideTwoNumberDivideByZeroExeption() 
+        public void DivideByZeroException()
         {
-            Assert.Throws<DivideByZeroException>(() => uut.Divide(10, 0)); 
+            uut.Add(5);
+            Assert.That( () => uut.Divide(0), Throws.TypeOf<DivideByZeroException>());
+
         }
 
-        //public void AccumulatorFail()
-        //{
 
-        //}
 
+ 
 
     }
 }

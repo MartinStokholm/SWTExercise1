@@ -31,7 +31,11 @@
 
         public double Divide( double divisor)
         {
-            if (divisor == 0) return 0;
+            
+            if (divisor==0)
+            {
+                throw new DivideByZeroException();
+            }
             return Accumulator /= divisor;
         }
 

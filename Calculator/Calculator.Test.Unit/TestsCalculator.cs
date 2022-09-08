@@ -135,9 +135,13 @@ namespace Calculator.Test.Unit
 
         }
 
+        [Test]
+        public void DivideTwoNumberDivideByZeroExeption()
+        {
+            Assert.Throws<DivideByZeroException>(() => uut.Divide(10, 0));
+        }
 
 
- 
 
     }
 }

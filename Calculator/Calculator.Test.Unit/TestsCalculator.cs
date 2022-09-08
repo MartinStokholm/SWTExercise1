@@ -122,7 +122,6 @@ namespace Calculator.Test.Unit
 
         [TestCase(5, 3, ExpectedResult = 1.66)]
         [TestCase(-4.5, -5, ExpectedResult = 0.9)]
-        [TestCase(-4.5, 0, ExpectedResult = 0)]
         [DefaultFloatingPointTolerance(0.05)]
         public double DivideTwoNumbers(double param, double param2) 
         {
